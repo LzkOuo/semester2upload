@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Francisco Saldarriaga" />
+    <meta
+      name="keywords"
+      content="mapping, storytelling, urban design, new york"
+    />
+    <title>Assignment 2 - Web Map</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a
+        class="nav-title"
+        href="../index.html"
+        >Zekun Liu</a
+      >
+    </header>
+    <main>
+      <div class="assignment">
+        <p class="assignment-title">Assignment IV Median Household Income Census Data</p>
+        <section id="about">
+          <p>This is a map of Median Household Income in the United States Census data. This map is broken down into two tiers, you are now looking at a state level map, when you zoom in it will be specific to the county level. The color shades represent the absolute amount of household income. The redder the color the higher the income, the yellower the color the lower the income.</p>
+        </section>
+        <div id="map">
+          <div class="map-label">
+            <img src="data/label.png" alt="Example Image" />
+          </div>
+        </div>
+        <div class="legend" id="legend">The map data is derived from B19013Median Household Income in the Past 12Months (in 2023 Inflation-Adjusted Dollars).</div>
+    </main>
+
+    <script src="map.js"></script>
+
+    <footer>
+      <p class="footer-text">
+        Send me a <a href="mailto:zacquinliu@gmail.com">message</a>
+      </p>
+    </footer>
+
+  </body>
+</html>
