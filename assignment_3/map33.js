@@ -14,26 +14,35 @@ map33.on('load', () => {
   // 添加 GeoJSON 数据源
   map33.addSource('polluted-zone-33', {
     type: 'geojson',
-    data: 'data_set/polluted_area.geojson'
+    data: 'data_set/burden_points.geojson'
   });
 
   map33.addLayer({
     id: 'polluted-zone-layer-33',
-    type: 'fill',
+    type: 'heatmap',
     source: 'polluted-zone-33',
     paint: {
-      'fill-color': [
+      'heatmap-weight': [
         'interpolate',
         ['linear'],
-        ['get', 'Percentile_Rank_Combined_NYC'],
-        0, '#fff7bc',
-        0.25, '#fec44f',
-        0.5, '#fc9272',
-        0.75, '#de2d26',
-        1, '#a50f15'
+        ['get', 'Burden_Score'],
+        30, 0,
+        60, 1
       ],
-      'fill-opacity': 0.5,
-      'fill-outline-color': '#f9f9f9'
+      'heatmap-intensity': 1.6,
+      'heatmap-radius': 70,
+      'heatmap-opacity': 0.9,
+      'heatmap-color': [
+        'interpolate',
+        ['linear'],
+        ['heatmap-density'],
+        0, 'rgba(255,255,204,0)',
+        0.2, 'rgb(255,237,160)',
+        0.4, 'rgb(254,178,76)',
+        0.6, 'rgb(253,141,60)',
+        0.8, 'rgb(240,59,32)',
+        1, 'rgb(189,0,38)'
+      ]
     }
   });
 });

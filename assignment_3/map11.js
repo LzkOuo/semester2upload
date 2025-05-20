@@ -23,14 +23,19 @@ map11.on('load', () => {
     source: 'polluted-zone-11',
     paint: {
       'fill-color': [
-        'interpolate',
-        ['linear'],
-        ['get', 'Vulnerability_Score_Percentile'],
-        0, '#fff7bc',
-        0.25, '#fec44f',
-        0.5, '#fc9272',
-        0.75, '#de2d26',
-        1, '#a50f15'
+        'case',
+        ['!', ['has', 'Burden_Score']], '#ffffff',
+        ['==', ['get', 'Burden_Score'], null], '#ffffff',
+        [
+          'interpolate',
+          ['linear'],
+          ['get', 'Burden_Score'],
+          20, '#fff7bc',
+          30, '#fec44f',
+          40, '#fc9272',
+          50, '#de2d26',
+          60, '#a50f15'
+        ]
       ],
       'fill-opacity': 0.8,
       'fill-outline-color': '#f9f9f9'

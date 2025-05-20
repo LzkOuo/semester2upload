@@ -32,7 +32,7 @@ map22.on('load', () => {
         0.75, '#de2d26',
         1, '#a50f15'
       ],
-      'fill-opacity': 0.5,
+      'fill-opacity': 0.8,
       'fill-outline-color': '#f9f9f9'
     }
   });
